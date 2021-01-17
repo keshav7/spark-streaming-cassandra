@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile('org.apache.spark:spark-core_2.12:3.0.0')
+
+    implementation 'org.apache.spark:spark-sql_2.12:3.0.0'
+    implementation 'org.apache.spark:spark-streaming_2.12:3.0.0'
+    implementation 'org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0'
+
+
+    compileOnly 'org.projectlombok:lombok:1.18.14'
+    annotationProcessor 'org.projectlombok:lombok:1.18.14'
+
+//    implementation 'com.datastax.cassandra:cassandra-driver-core:2.1.9'
+
+    implementation 'com.datastax.cassandra:cassandra-driver-core:3.10.1'
+    compile 'org.codehaus.janino:commons-compiler:3.0.8'
+    compile 'org.codehaus.janino:janino:3.0.8'
+}
+
+test {
+    useJUnitPlatform()
+}
